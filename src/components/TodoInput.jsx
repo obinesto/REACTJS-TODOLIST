@@ -2,12 +2,8 @@
 
 export default function TodoInput({ handleTodos, todoValue, setTodoValue }) {
   const handleInputData = (event) => {
-    const inputValue = event.target.value;
-    if (inputValue.trim() === "") {
-      return;
-    }
-    setTodoValue(inputValue);
-  }
+        setTodoValue(event.target.value);
+      };
 
   return (
     <header>
