@@ -17,7 +17,7 @@ function App() {
   }
 
   function handleDeleteTodo(todoIndex) {
-    const newTodoList = todos.filter((todo, index) => {
+    const newTodoList = todos.filter((_, index) => {
       return index !== todoIndex;
     });
     handleData(newTodoList)

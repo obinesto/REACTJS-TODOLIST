@@ -1,20 +1,27 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 
-export default function TodoInput(props) {
-  const { handleTodos, todoValue, setTodoValue } = props;
+export default function TodoInput({ handleTodos, todoValue, setTodoValue }) {
+  const handleInputData = (event) => {
+    const inputValue = event.target.value;
+    if (inputValue.trim() === "") {
+      return;
+    }
+    setTodoValue(inputValue);
+  }
 
   return (
     <header>
       <input
         value={todoValue}
-        onChange={(event) => {
-          setTodoValue(event.target.value);
-        }}
+        onChange={handleInputData}
         type="text"
         placeholder="Enter todo..."
       />
       <button
         onClick={() => {
+          if (todoValue.trim() === "") {
+            return;
+          }
           handleTodos(todoValue);
           setTodoValue("");
         }}

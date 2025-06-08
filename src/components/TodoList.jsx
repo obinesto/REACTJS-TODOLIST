@@ -1,12 +1,12 @@
+/* eslint-disable react/prop-types */
 import TodoCard from "./TodoCard";
 
-export default function TodoList(props) {
-  const { todos } = props;
+export default function TodoList({ todos }) {
   return (
     <ul className="main">
       {todos.map((todo, todoIndex) => {
         return (
-          <TodoCard {...props} key={todoIndex} index={todoIndex}>
+          <TodoCard key={todoIndex} index={todoIndex}>
             <p>{todo}</p>
           </TodoCard>
         );
